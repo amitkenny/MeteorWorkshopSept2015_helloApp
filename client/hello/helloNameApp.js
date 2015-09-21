@@ -9,9 +9,11 @@
     counter: function () {
       return Session.get('counter');
     },
-    name : function(){
-      return Session.get('name');
-    }
+    name : function(message){
+
+      return message+" This is "+Session.get('name');
+    },
+    
   });
 
   Template.hello.events({

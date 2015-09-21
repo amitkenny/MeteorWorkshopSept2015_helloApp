@@ -1,0 +1,46 @@
+<template name="fruits">
+
+  <form id="insertFruits" method="post">
+    <div>
+      <input type="text" name="fruitName" placeholder="Enter a fruit to the Basket">
+
+    </div>
+    <br>
+    <div>
+      <input type="text" name="countryOrigin" placeholder="Country of origin of fruit">
+
+    </div>
+    <div>
+          <button type="submit">Add Fruit</button>
+    </div>
+  </form>
+
+  <h3>Fruit Basket</h3>
+  {{#if basket}}
+  <table border='1'>
+    <thead>
+      <td>
+        Fruit Name
+      </td>
+      <td>
+        Origin
+      </td>
+    </thead>
+
+    {{#each basket}}
+        <tr>
+          <td>
+            {{fruit}}
+          </td>
+          <td>
+            {{origin}}
+          </td>
+        </tr>
+    {{/each}}
+  </table>
+  {{else}}
+    <h4 class="message">
+      <i>No Fruits in the Basket.</i>
+    </h4>
+  {{/if}}
+</template>
